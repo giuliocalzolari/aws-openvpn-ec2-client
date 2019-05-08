@@ -1,12 +1,11 @@
-
-
 resource "aws_cloudwatch_log_group" "cwlog" {
   name              = "/aws/ec2/${var.environment}-${var.app_name}"
   retention_in_days = 30
+
   tags = "${merge(
         var.extra_tags,
         map("Name", "/aws/ec2/${var.environment}-${var.app_name}"),
-        )}"    
+        )}"
 }
 
 resource "aws_ec2_client_vpn_endpoint" "main" {
@@ -25,10 +24,11 @@ resource "aws_ec2_client_vpn_endpoint" "main" {
     enabled              = true
     cloudwatch_log_group = "${aws_cloudwatch_log_group.cwlog.name}"
   }
+
   tags = "${merge(
         var.extra_tags,
         map("Name", "${var.environment}-${var.app_name}"),
-        )}"  
+        )}"
 }
 
 resource "aws_ec2_client_vpn_network_association" "main-assoc" {

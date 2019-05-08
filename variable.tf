@@ -1,56 +1,61 @@
 variable "environment" {
-	default = "dev"
+  description = "env to run"
+  default     = "dev"
 }
 
 variable "app_name" {
-	default = "client-vpn"
+  description = "app name"
+  default     = "client-vpn"
 }
 
 variable "ds_id" {
-  default = "d-9967362dd3"
+  description = "AWS DS Id (required to be created before)"
 }
 
 variable "subnet" {
-  default = ""
+  description = "subnet to associate the endpoint"
 }
 
-
 variable "client_cidr_block" {
-  default = "192.168.0.0/22"
+  description = "client CIRD BLco"
+  default     = "192.168.0.0/22"
 }
 
 variable "transport_protocol" {
-  default = "tcp"
+  description = "OpenVPN TRansport protocol"
+  default     = "tcp"
 }
 
 variable "dns_servers" {
-  default = ["10.0.0.2"]
+  description = "DNS server for the Client"
+  default     = ["8.8.8.8", "8.8.4.4"]
 }
 
-
 variable "rsa_bits" {
-  default = "2048"
+  description = "RSA Bit For Certificates"
+  default     = "2048"
 }
 
 variable "algorithm" {
-  default = "RSA"
+  description = "Algorithm for Certificates"
+  default     = "RSA"
 }
 
 variable "domain" {
-  default = "vpn.gc.cloud"
+  description = "domain to use"
 }
 
 variable "validity_period_hours" {
-  default = 26280
+  description = "Certificate day validity"
+  default     = 26280
 }
-
 
 variable "clients" {
-  default = ["client1"]
+  description = "client config to create "
+  default     = ["client1"]
 }
 
-
-
 variable "extra_tags" {
-  type = "map"
+  description = "extra tags to add"
+  type        = "map"
 }

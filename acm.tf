@@ -72,8 +72,6 @@ resource "local_file" "server_cert" {
   filename = "./certs/server.${var.domain}.crt"
 }
 
-
-
 # 
 # mkdir ssl
 # cd ssl
@@ -146,15 +144,13 @@ resource "local_file" "client_cert" {
   filename = "./certs/${var.clients[count.index]}.crt"
 }
 
-
-
-
 resource "aws_acm_certificate" "cert" {
   private_key       = "${tls_private_key.server.0.private_key_pem}"
   certificate_body  = "${tls_locally_signed_cert.server.0.cert_pem}"
   certificate_chain = "${tls_self_signed_cert.root_ca.0.cert_pem}"
+
   tags = "${merge(
         var.extra_tags,
         map("Name", "${var.environment}-${var.app_name}-server-cert"),
-        )}"   
+        )}"
 }
