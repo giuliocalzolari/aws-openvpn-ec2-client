@@ -40,13 +40,13 @@ plan-destroy: init ## Creates a destruction plan.
 		-refresh=true \
 		-destroy
 
-up: apply	## alias of apply 
+up: apply	## alias of apply
 apply: init ## Have terraform do the things. This will cost money.
 	@terraform apply \
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-auto-approve=true 
+		-auto-approve=true
 
 del: destroy	## alias of destroy
 delete: destroy ## alias of destroy
@@ -55,7 +55,7 @@ destroy: init ## Destroy the things
 		-lock=true \
 		-input=false \
 		-refresh=true \
-		-force 
+		-force
 	@rm -rf tfplan
 	@rm -rf terraform.tfstate.backup
 	@rm -rf .terraform

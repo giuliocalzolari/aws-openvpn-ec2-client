@@ -72,7 +72,7 @@ resource "local_file" "server_cert" {
   filename = "./certs/server.${var.domain}.crt"
 }
 
-# 
+#
 # mkdir ssl
 # cd ssl
 # git clone https://github.com/OpenVPN/easy-rsa.git
