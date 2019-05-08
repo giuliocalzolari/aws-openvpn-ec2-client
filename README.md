@@ -9,3 +9,7 @@ cd aws-openvpn-ec2-client/
 cd tests/
 make apply
 ```
+
+
+# WIP
+it's a working progress
