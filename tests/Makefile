@@ -58,6 +58,7 @@ destroy: init ## Destroy the things
 		-force 
 	@rm -rf tfplan
 	@rm -rf terraform.tfstate.backup
+	@rm -rf .terraform
 
 
 help:
