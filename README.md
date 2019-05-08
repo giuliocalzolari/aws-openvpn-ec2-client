@@ -29,6 +29,12 @@ make apply
 | transport\_protocol | OpenVPN TRansport protocol | string | `"tcp"` | no |
 | validity\_period\_hours | Certificate day validity | string | `"26280"` | no |
 
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| acm\_certificate\_arn | AWS ACM ARN |
+| aws\_client\_vpn\_endpoint | AWS EC2 VPN Client Endpoint |
 
 # WIP
 it's a working progress
