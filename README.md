@@ -24,7 +24,7 @@ it's a working progress
 | app\_name | app name | string | `"client-vpn"` | no |
 | client\_cidr\_block | client CIRD BLco | string | `"192.168.0.0/22"` | no |
 | clients | client config to create | list | `[ "client1" ]` | no |
-| dns\_servers | DNS server for the Client | list | `[ "8.8.8.8", "8.8.4.4" ]` | no |
+| dns\_servers | DNS server for the Client | list | `[ "8.8.8.8","8.8.4.4" ]` | no |
 | domain | domain to use | string | n/a | yes |
 | ds\_id | AWS DS Id (required to be created before) | string | n/a | yes |
 | environment | env to run | string | `"dev"` | no |

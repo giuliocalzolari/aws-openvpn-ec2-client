@@ -25,7 +25,7 @@ module "vpc-ovpn" {
 }
 
 module "ovpn" {
-  source      = "git@github.com:giuliocalzolari/aws-openvpn-ec2-client.git"
+  source      = "github.com/giuliocalzolari/aws-openvpn-ec2-client.git"
   ds_id       = "d-9967362dd3"
   domain      = "vpn.gc.cloud"
   clients     = ["client1"]
