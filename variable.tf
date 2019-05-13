@@ -17,8 +17,8 @@ variable "subnet" {
 }
 
 variable "client_cidr_block" {
-  description = "client CIRD BLco"
-  default     = "192.168.0.0/22"
+  description = "client CIDR Block"
+  default     = "192.168.240.0/22"
 }
 
 variable "transport_protocol" {
